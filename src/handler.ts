@@ -6,8 +6,7 @@ interface IHandlerResponse {
 }
 
 export const defaultFunction: APIGatewayProxyHandler = async (event: APIGatewayEvent, context) => {
-  console.log("Hello Handler..");
-  console.log(event);
+  console.log("Hello Handler!");
 
   const response: IHandlerResponse = {
     statusCode: 200,
