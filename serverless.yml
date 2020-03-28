@@ -10,10 +10,18 @@ provider:
   region: eu-west-1
 
 functions:
-  hello:
-    handler: build/handler.defaultFunction
+  default:
+    handler: build/default.handler
     events:
       - http:
-          path: hello
+          path: default
+          method: GET
+          cors: true
+
+  withdraw:
+    handler: build/account.withdraw
+    events:
+      - http:
+          path: withdraw
           method: GET
           cors: true
