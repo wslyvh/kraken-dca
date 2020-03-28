@@ -10,6 +10,11 @@ provider:
   region: eu-west-1
 
 functions:
+  cron:
+    handler: build/default.handler
+    events:
+      - schedule: cron(0/5 * * * ? *)
+
   default:
     handler: build/default.handler
     events:
