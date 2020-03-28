@@ -26,15 +26,9 @@ functions:
   trade:
     handler: build/account.trade
     events:
-      - http:
-          path: trade
-          method: GET
-          cors: true
+      - schedule: cron(0 7 ? * 2L *)
 
   withdraw:
     handler: build/account.withdraw
     events:
-      - http:
-          path: withdraw
-          method: GET
-          cors: true
+      - schedule: cron(0 8 ? * 2L *)

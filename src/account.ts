@@ -7,7 +7,7 @@ export const trade: APIGatewayProxyHandler = async () => {
   console.log("EXEC account.trade");
 
   const exchange = new KrakenExchange();
-  await exchange.createOrder("BUY", "ETH/EUR", AppConfig.DEFAULT_ORDER_AMOUNT); // amount in quote currency
+  await exchange.createOrder("BUY", "ETH/EUR", AppConfig.ORDER_AMOUNT); // amount in quote currency
 
   const response: IHandlerResponse = {
     statusCode: 200,
@@ -21,6 +21,7 @@ export const withdraw: APIGatewayProxyHandler = async () => {
   console.log("EXEC account.withdraw");
 
   const exchange = new KrakenExchange();
+  await exchange.withdraw("ETH", AppConfig.WALLET_ADDRESS_ETH, undefined, AppConfig.WALLET_DESCRIPTION_ETH);
 
   const response: IHandlerResponse = {
     statusCode: 200,

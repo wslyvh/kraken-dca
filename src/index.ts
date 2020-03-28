@@ -26,7 +26,14 @@ async function Test() {
 
   console.log("TRADE.");
   // ==
-  await exchange.createOrder("BUY", "ETH/EUR", AppConfig.DEFAULT_ORDER_AMOUNT); // amount in quote currency
+  await exchange.createOrder("BUY", "ETH/EUR", AppConfig.ORDER_AMOUNT); // amount in quote currency
+
+  console.log("WITHDRAW.");
+  // ==
+  console.log("ETH", AppConfig.WALLET_ADDRESS_ETH, AppConfig.WALLET_DESCRIPTION_ETH, 0.1);
+  await exchange.withdraw("ETH", AppConfig.WALLET_ADDRESS_ETH, 0.1, AppConfig.WALLET_DESCRIPTION_ETH);
+  console.log("ETH", AppConfig.WALLET_ADDRESS_ETH, AppConfig.WALLET_DESCRIPTION_ETH, "ALL");
+  await exchange.withdraw("ETH", AppConfig.WALLET_ADDRESS_ETH, undefined, AppConfig.WALLET_DESCRIPTION_ETH);
 
   console.log("DONE.");
 }
