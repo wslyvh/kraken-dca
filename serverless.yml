@@ -1,0 +1,19 @@
+service:
+  name: dca-runner
+
+app: dca
+org: wslyvh
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  region: eu-west-1
+
+functions:
+  hello:
+    handler: build/handler.defaultFunction
+    events:
+      - http:
+          path: hello
+          method: GET
+          cors: true
