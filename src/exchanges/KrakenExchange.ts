@@ -52,4 +52,22 @@ export class KrakenExchange {
       }
     }
   }
+
+  public async withdraw(symbol: "BTC" | "ETH", address: string, amount?: number, walletDescription?: string) {
+    // if no amount is specified, it withdraws all available balance
+    if (!amount) {
+      amount = await this.balance(symbol);
+    }
+    // to withdraw from Kraken you need to add a withdrawal address on Kraken first and add the description (default is 'eth')
+    let params = {};
+    if (walletDescription) {
+      params = { key: walletDescription };
+    }
+    console.log("Withdraw", symbol, amount, address);
+
+    if (AppConfig.EXECUTE_MODE) {
+      const withdrawal = await this.client.withdraw(symbol, amount, address, null, params);
+      console.log(withdrawal);
+    }
+  }
 }
