@@ -18,6 +18,14 @@ functions:
           method: GET
           cors: true
 
+  trade:
+    handler: build/account.trade
+    events:
+      - http:
+          path: trade
+          method: GET
+          cors: true
+
   withdraw:
     handler: build/account.withdraw
     events:
