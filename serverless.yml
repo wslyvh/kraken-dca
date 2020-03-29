@@ -8,6 +8,10 @@ provider:
   name: aws
   runtime: nodejs10.x
   region: eu-west-1
+  environment:
+    API_KEY: ${param:API_KEY}
+    API_SECRET: ${param:API_SECRET}
+    WALLET_ADDRESS_ETH: ${param:WALLET_ADDRESS_ETH}
 
 functions:
   cron:

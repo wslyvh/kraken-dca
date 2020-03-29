@@ -1,12 +1,10 @@
 import { KrakenExchange } from "./exchanges/KrakenExchange";
 import AppConfig from "./config/App";
 
-console.log("Hello world");
+console.log("Testing..");
 Test();
 
 async function Test() {
-  console.log("Testing..");
-
   const exchange = new KrakenExchange();
   let price = 0;
   let balance = 0;
@@ -30,8 +28,8 @@ async function Test() {
 
   console.log("WITHDRAW.");
   // ==
-  console.log("ETH", AppConfig.WALLET_ADDRESS_ETH, AppConfig.WALLET_DESCRIPTION_ETH, 0.1);
-  await exchange.withdraw("ETH", AppConfig.WALLET_ADDRESS_ETH, 0.1, AppConfig.WALLET_DESCRIPTION_ETH);
+  // console.log("ETH", AppConfig.WALLET_ADDRESS_ETH, AppConfig.WALLET_DESCRIPTION_ETH, 0.1);
+  // await exchange.withdraw("ETH", AppConfig.WALLET_ADDRESS_ETH, 0.1, AppConfig.WALLET_DESCRIPTION_ETH);
   console.log("ETH", AppConfig.WALLET_ADDRESS_ETH, AppConfig.WALLET_DESCRIPTION_ETH, "ALL");
   await exchange.withdraw("ETH", AppConfig.WALLET_ADDRESS_ETH, undefined, AppConfig.WALLET_DESCRIPTION_ETH);
 

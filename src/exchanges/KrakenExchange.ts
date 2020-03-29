@@ -21,13 +21,13 @@ export class KrakenExchange {
   public async balance(symbol: "BTC" | "ETH" | "EUR"): Promise<number> {
     const balance = await this.client.fetchBalance();
 
-    if (symbol === "BTC") {
+    if (symbol === "BTC" && balance.BTC) {
       return balance.BTC.total;
     }
-    if (symbol === "ETH") {
+    if (symbol === "ETH" && balance.ETH) {
       return balance.ETH.total;
     }
-    if (symbol === "EUR") {
+    if (symbol === "EUR" && balance.EUR) {
       return balance.EUR.total;
     }
 
