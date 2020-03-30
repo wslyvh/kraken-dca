@@ -37,17 +37,17 @@ export class KrakenExchange {
   public async createOrder(type: "BUY" | "SELL", symbol: string, amount: number) {
     // e.g. ETH (base) / EUR (quote)
     const basePrice = await this.price(symbol);
-    const quoteAmount = amount / basePrice;
+    const quoteAmount = this.client.amountToPrecision(symbol, amount / basePrice);
     console.log(type, quoteAmount);
     console.log("Create", type, amount, quoteAmount);
 
     if (AppConfig.EXECUTE_MODE) {
       if (type === "BUY") {
-        const order = await this.client.createMarketBuyOrder(symbol, amount);
+        const order = await this.client.createMarketBuyOrder(symbol, quoteAmount);
         console.log(order);
       }
       if (type === "SELL") {
-        const order = await this.client.createMarketSellOrder(symbol, amount);
+        const order = await this.client.createMarketSellOrder(symbol, quoteAmount);
         console.log(order);
       }
     }
