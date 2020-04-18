@@ -4,9 +4,9 @@ const accountWithdraw: AzureFunction = async function (context: Context, timer: 
   const timeStamp = new Date().toISOString();
 
   if (timer.isPastDue) {
-    context.log("Timer function is running late!");
+    context.log("Withdraw Timer function is running late!");
   }
-  context.log("Timer trigger function ran!", timeStamp);
+  context.log("Withdraw Timer trigger function ran!", timeStamp);
 };
 
 export default accountWithdraw;

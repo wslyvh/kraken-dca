@@ -4,8 +4,8 @@
       "name": "withdrawTimer",
       "type": "timerTrigger",
       "direction": "in",
-      "schedule": "0 */5 * * * *"
+      "schedule": "0 */15 * * * *"
     }
   ],
-  "scriptFile": "../../../build/functions/withdraw/index.js"
+  "scriptFile": "../build/functions/withdraw/index.js"
 }
