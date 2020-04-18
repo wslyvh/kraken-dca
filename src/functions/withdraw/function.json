@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "name": "withdrawTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 */5 * * * *"
+    }
+  ],
+  "scriptFile": "../../../build/functions/withdraw/index.js"
+}

@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "name": "tradeTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 */5 * * * *"
+    }
+  ],
+  "scriptFile": "../../../build/functions/trade/index.js"
+}
