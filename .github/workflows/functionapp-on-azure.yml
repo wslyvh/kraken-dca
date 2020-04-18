@@ -3,7 +3,9 @@ name: Deploy to Azure functions
 
 on:
   push:
-    branches: [master]
+    branches:
+      - master
+      - azure
 
 env:
   AZURE_FUNCTIONAPP_NAME: wslyvh-crypto # set this to your application's name
