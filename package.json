@@ -9,7 +9,7 @@
     "start": "ts-node src/index.ts",
     "build": "tsc",
     "deploy": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\"",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "lint-fix": "tslint --fix -c tslint.json -p tsconfig.json"
   },
